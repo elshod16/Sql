@@ -51,13 +51,6 @@ select
 	  charindex(',',fruit_list,charindex(',',fruit_list)+1)+1,
 	  charindex(',',fruit_list,charindex(',',fruit_list,charindex(',',fruit_list)+1)+1)-(charindex(',',fruit_list,charindex(',',fruit_list)+1)+1)) as third
 from fruits
-
-
---select
---     SUBSTRING('sdgfhsdgfhs@121313131',1,charindex('@','sdgfhsdgfhs@121313131'))-1 as firstr,
---     substring ('sdgfhsdgfhs@121313131',charindex('@','sdgfhsdgfhs@121313131',
---	 charindex('@','sdgfhsdgfhs@121313131')+1)+1,len('sdgfhsdgfhs@121313131')) as secondr
-
 declare @str1 varchar(100)='sdgfhsdgfhs@121313131'
 
 select *,case when p1.code=0 then p2.code else p1.code end as code   from p1
@@ -71,8 +64,6 @@ case when datediff(year,hire_date,getdate())<1 then 'new hire'
 	 when datediff(year,hire_date,getdate())>20 then 'veteran' end as status
 from employees
 select * from GetIntegers
-
-
 
 SELECT 
     CASE  WHEN PATINDEX('%[^0-9]%', Vals) > 1 
